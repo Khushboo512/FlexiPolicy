@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+</head>
+<style>
+    /* ************************************dropdown************************** */
+    
+    .btn .caret {
+        float: right;
+        margin: 8px 2px 2px 2px;
+    }
+    
+    .multiselect-selected-text {
+        float: left;
+    }
+    
+    .dropdown-toggle.btn-default:focus {
+        color: #333;
+        background-color: white !important;
+        border: 2px solid #00aeef;
+    }
+    
+    .dropdown-toggle.btn-default:hover {
+        color: #333;
+        box-shadow: none;
+        background-color: white;
+        border: 1px solid #adadad;
+    }
+    
+    .open>.dropdown-toggle.btn-default {
+        color: #333;
+        box-shadow: none !important;
+        background-color: white !important;
+        border: 2px solid #00aeef !important;
+    }
+    
+    .dropdown-menu {
+        margin: 5px 0 0 !important;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #fff !important;
+        border-radius: 5px;
+    }
+    
+    .dropdown-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        background: #00aeef;
+        border-radius: 10px;
+    }
+    
+    .input-group-btn,
+    .input-group-addon {
+        display: none !important;
+    }
+    
+    .input-group .form-control:not(:first-child):not(:last-child) {
+        border-radius: 4px !important;
+    }
+    
+    .input-group .form-control:focus {
+        border: 2px solid #00aeef;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .input-group .form-control {
+        border: 2px solid #00aeef;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .multiselect-container>li {
+        padding: 2px !important;
+    }
+    
+    .checkbox input[type=checkbox] {
+        margin-left: -25px !important;
+        width: 16px;
+        height: 16px;
+        margin-top: 2px !important;
+    }
+    
+    .multiselect-container>li>a {
+        padding: 0;
+        margin-left: -5px !important;
+    }
+    
+    .placeholder {
+        position: absolute;
+        left: 32px;
+        top: 23px;
+        transition: all 0.3s;
+        color: #444444;
+        font-weight: normal;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.28px;
+    }
+    
+    .placeholder.active {
+        left: 15px;
+        top: 2px;
+        background: #fff;
+        padding: 0px 5px;
+        color: #666;
+        font-size: 12px;
+    }
+    
+    .placeholder.active-label {
+        left: 28px;
+        top: 9px;
+        z-index: 3;
+        background-color: #fff;
+        padding: 0 6px;
+        color: #666;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0.24px;
+    }
+    
+    .btn-group {
+        margin: 20px;
+    }
+    
+    div.btn-group.open~#form-labels {
+        color: #00aeef;
+    }
+    
+    .input-group::before {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 18px;
+        background: url(/images/search.svg) no-repeat;
+        background-size: 100% 100%;
+        z-index: 3;
+        margin: 8px 8px;
+    }
+    
+    .multiselect-search {
+        padding: 6px 12px 6px 33px !important;
+    }
+    
+    .dropdown-menu>.active>a {
+        color: #fff;
+        text-decoration: none;
+        background-color: #00aeef !important;
+        outline: 0;
+    }
+</style>
+
+<body>
+
+    <div class="">
+        <select id="multiple-checkboxes" multiple="multiple">
+            <option value="php">PHP</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="sql">SQL</option>
+            <option value="jquery">Jquery</option>
+            <option value=".net">.Net</option>
+        </select>
+        <label id="form-labels" class="placeholder active-label"> Placeholder </label>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+
+</body>
+<script>
+    $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: 217,
+            enableCaseInsensitiveFiltering: true,
+            maxHeight: 200
+
+        });
+    });
+</script>
+
+</html>
